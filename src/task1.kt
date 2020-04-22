@@ -1,4 +1,5 @@
 import kotlin.math.PI
+import kotlin.math.pow
 
 fun main() {
     val d: Double = readLine()?.toDouble() ?: 0.0
@@ -10,14 +11,11 @@ fun main() {
 }
 
 fun sphe(r: Double): Double {
-    val s: Double = 4.0 * PI * r * r
+    val s: Double = 4.0 * PI * r.pow(2)
     return s
 }
 
 fun sph2(r: Double): Double {
-    val v: Double = (4.0 * PI * r * r * r) / 3.0
+    val v: Double = (4.0 * PI * r.pow(3)) / 3.0
     return v
 }
-
-//
-
