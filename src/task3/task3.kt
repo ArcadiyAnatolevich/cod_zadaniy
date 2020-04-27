@@ -5,6 +5,6 @@ fun main() {
         println("между 2 и 32")
     else if(a > 32)
         println("больше 32")
-    else(a > 2)
+    else(a < 2)
     println("меньше 2")
 }
