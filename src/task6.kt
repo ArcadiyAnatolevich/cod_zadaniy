@@ -2,6 +2,7 @@ fun main() {
     var a: Int = readLine()?.toInt() ?: 0
     var b: Int = readLine()?.toInt() ?: 0
     var c: Int = readLine()?.toInt() ?: 0
+
     if (a > c && a > b) {
         a = c.also{ c = a}
     } else if(c < b && b > a) {
