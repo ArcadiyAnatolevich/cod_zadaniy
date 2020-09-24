@@ -5,7 +5,5 @@ fun main() {
     while (a < b) {
         o > 16
         o < -16
-
     }
-
 }
