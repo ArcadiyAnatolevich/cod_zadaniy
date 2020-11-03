@@ -4,6 +4,7 @@ fun main() {
     val a = readLine()?.toInt() ?: 0
     val b = readLine()?.toInt() ?: 0
     val c = readLine()?.toInt() ?: 0
+    //if (b <= c + a && c <= b + a && a <= b + c) {
     if (b <= c + a && c <= b + a && a <= b + c) {
         val p = perimeter(a, b, c)
         val s = square(
