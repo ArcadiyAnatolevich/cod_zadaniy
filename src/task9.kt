@@ -12,7 +12,6 @@ fun main() {
         c = readLine()!!.toInt()
     }
 
-    if (b <= c + a || c <= b + a || a <= b + c) {
         println("Ты молодец,наверняка матешу не прогуливал")
 
         val p = perimeter(a, b, c)
@@ -24,7 +23,7 @@ fun main() {
         println("Площадь равна $s")
     }
 
-}
+
 
 fun perimeter(a: Int, b: Int, c: Int): Int {
     val p = a + b + c
