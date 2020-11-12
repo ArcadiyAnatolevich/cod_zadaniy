@@ -1,20 +1,34 @@
+package tmp
+
+import kotlin.math.roundToInt
+
 fun main() {
-    val h: Int = readLine()?.toInt() ?: 0
-    val b: Int = readLine()?.toInt() ?: 0
-    val a: Int = readLine()?.toInt() ?: 0
-    val v: Int = readLine()?.toInt() ?: 0
-    val n: Int = readLine()?.toInt() ?: 0
-    val p: Int = par(a, b, h)
-    val с: Int = cal(p, v, n)
-    println("Кол-во грузовиков равна $с")
+    val h = readLine()?.toInt() ?: 0
+    val b = readLine()?.toInt() ?: 0
+    val a = readLine()?.toInt() ?: 0
+    val v = readLine()?.toInt() ?: 0
+    val n = readLine()?.toInt() ?: 0
+    val p = par(a, b, h)
+    val fv = v * n
+    val c = cal(p, fv)
+    val z = cir(fv, p)
+    println("Кол-во вагонов равна $c")
+    println("Процент загружености последнего вагона равен $z")
 }
 
 fun par(a: Int, b: Int, h: Int): Int {
-    val p: Int = a * b * h
-    return p
+    return a * b * h
 }
 
-fun cal(p: Int, v: Int, n: Int): Int {
-    val c: Int = p - (v * n)
+fun cal(p: Int, fv: Int): Int {
+    var c = fv / p
+    if ((fv % p) > 0) {
+        c += 1
+    }
     return c
+}
+
+fun cir(fv: Int, p: Int): Int {
+    val z = fv.toFloat() / p.toFloat() * 100
+    return z.roundToInt()
 }
