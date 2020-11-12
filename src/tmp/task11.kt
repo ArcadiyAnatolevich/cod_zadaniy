@@ -21,10 +21,7 @@ fun par(a: Int, b: Int, h: Int): Int {
 }
 
 fun cal(p: Int, fv: Int): Int {
-    var c = fv / p
-    if ((fv % p) > 0) {
-        c += 1
-    }
+    val c = fv / p + if ((fv % p) > 0) 1 else 0
     return c
 }
 
