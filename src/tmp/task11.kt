@@ -3,29 +3,29 @@ package tmp
 import kotlin.math.roundToInt
 
 fun main() {
-    val h = readLine()?.toInt() ?: 0
-    val b = readLine()?.toInt() ?: 0
-    val a = readLine()?.toInt() ?: 0
-    val v = readLine()?.toInt() ?: 0
-    val n = readLine()?.toInt() ?: 0
-    val p = par(a, b, h)
-    val fv = v * n
-    val c = cal(p, fv)
-    val z = cir(fv, p)
-    println("Кол-во вагонов равна $c")
-    println("Процент загружености последнего вагона равен $z")
+    val height = readLine()?.toInt() ?: 0
+    val width = readLine()?.toInt() ?: 0
+    val length = readLine()?.toInt() ?: 0
+    val volume = readLine()?.toInt() ?: 0
+    val quantityOfCargo = readLine()?.toInt() ?: 0
+    val parallelepiped = cube(length, width, height)
+    val volumeAndQuantity = volume * quantityOfCargo
+    val quantityOfBody = cal(parallelepiped, volumeAndQuantity)
+    val percentageOfWagonLoad = cir(volumeAndQuantity, parallelepiped)
+    println("Кол-во вагонов равна $quantityOfBody")
+    println("Процент загружености последнего вагона равен $percentageOfWagonLoad")
 }
 
-fun par(a: Int, b: Int, h: Int): Int {
-    return a * b * h
+fun cube(length: Int, width: Int, height: Int): Int {
+    return length * width * height
 }
 
-fun cal(p: Int, fv: Int): Int {
-    val c = fv / p + if ((fv % p) > 0) 1 else 0
-    return c
+fun cal(parallelepiped: Int, volumeAndQuantity: Int): Int {
+    val quantityOfBody = volumeAndQuantity / parallelepiped + if ((volumeAndQuantity % parallelepiped) > 0) 1 else 0
+    return quantityOfBody
 }
 
-fun cir(fv: Int, p: Int): Int {
-    val z = fv.toFloat() / p.toFloat() * 100
-    return z.roundToInt()
+fun cir(volumeAndQuantity: Int, quantityOfCargo: Int): Int {
+    val percentageOfWagonLoad = volumeAndQuantity.toFloat() / quantityOfCargo.toFloat() * 100
+    return percentageOfWagonLoad.roundToInt()
 }
