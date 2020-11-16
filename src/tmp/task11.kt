@@ -9,9 +9,9 @@ fun main() {
     val volume = readLine()?.toInt() ?: 0
     val quantityOfCargo = readLine()?.toInt() ?: 0
     val parallelepiped = cube(length, width, height)
-    val volumeAndQuantity = volume * quantityOfCargo
-    val quantityOfBody = deductionOfCargo(parallelepiped, volumeAndQuantity)
-    val percentageOfWagonLoad = deductionOfCargoRercentage(volumeAndQuantity, parallelepiped)
+    val volumeOfBody = volume * quantityOfCargo
+    val quantityOfBody = deductionOfCargo(parallelepiped, volumeOfBody)
+    val percentageOfWagonLoad = deductionOfCargoPercentage(volumeOfBody, parallelepiped)
     println("Кол-во вагонов равна $quantityOfBody")
     println("Процент загружености последнего вагона равен $percentageOfWagonLoad")
 }
@@ -20,12 +20,11 @@ fun cube(length: Int, width: Int, height: Int): Int {
     return length * width * height
 }
 
-fun deductionOfCargo(parallelepiped: Int, volumeAndQuantity: Int): Int {
-    val quantityOfBody = volumeAndQuantity / parallelepiped + if ((volumeAndQuantity % parallelepiped) > 0) 1 else 0
-    return quantityOfBody
+fun deductionOfCargo(parallelepiped: Int, volumeOfBody: Int): Int {
+    return volumeOfBody / parallelepiped + if ((volumeOfBody % parallelepiped) > 0) 1 else 0
 }
 
-fun deductionOfCargoRercentage(volumeAndQuantity: Int, quantityOfCargo: Int): Int {
-    val percentageOfWagonLoad = volumeAndQuantity.toFloat() / quantityOfCargo.toFloat() * 100
+fun deductionOfCargoPercentage(volumeOfBody: Int, quantityOfCargo: Int): Int {
+    val percentageOfWagonLoad = volumeOfBody.toFloat() / quantityOfCargo.toFloat() * 100
     return percentageOfWagonLoad.roundToInt()
 }
