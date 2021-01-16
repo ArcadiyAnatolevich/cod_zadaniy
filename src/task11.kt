@@ -1,5 +1,3 @@
-package tmp
-
 import kotlin.math.roundToInt
 
 fun main() {

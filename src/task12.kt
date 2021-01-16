@@ -1,3 +1,4 @@
+import kotlin.math.abs
 import kotlin.math.hypot
 
 fun main() {
@@ -7,10 +8,11 @@ fun main() {
     val cntrY2 = readLine()?.toDouble() ?: 0.0
     val rds1 = readLine()?.toDouble() ?: 0.0
     val rds2 = readLine()?.toDouble() ?: 0.0
-    val distance: Double = hypot(cntrX1 - cntrX2, cntrY1 - cntrY2)
-    if (distance < (rds1 - rds2)) {
+    val distance = hypot(cntrX1 - cntrX2,
+                         cntrY1 - cntrY2)
+    if (distance < abs(rds1 - rds2)) {
         println("один внутри другого")
-    } else if (distance < (rds1 + rds2)) {
+    } else if (distance < (rds1 + rds2) ) {
         println("пересекаются")
     } else {
         println("не пересекаются")

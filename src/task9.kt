@@ -4,7 +4,6 @@ fun main() {
     var a = readLine()?.toInt() ?: 0
     var b = readLine()?.toInt() ?: 0
     var c = readLine()?.toInt() ?: 0
-    //if (b <= c + a && c <= b + a && a <= b + c)
     while (b > (a + c) || c > (a + b) || a > (c + b)) {
         println("кароч не правильно")
         a = readLine()!!.toInt()
@@ -12,17 +11,16 @@ fun main() {
         c = readLine()!!.toInt()
     }
 
-        println("Ты молодец,наверняка матешу не прогуливал")
+    println("Ты молодец,наверняка матешу не прогуливал")
 
-        val p = perimeter(a, b, c)
-        val s = square(
-            a.toDouble(), b.toDouble(),
-            c.toDouble(), p.toDouble()
-        )
-        println("Периметр равен $p")
-        println("Площадь равна $s")
-    }
-
+    val p = perimeter(a, b, c)
+    val s = square(
+        a.toDouble(), b.toDouble(),
+        c.toDouble(), p.toDouble()
+    )
+    println("Периметр равен $p")
+    println("Площадь равна $s")
+}
 
 
 fun perimeter(a: Int, b: Int, c: Int): Int {
