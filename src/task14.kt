@@ -1,4 +1,4 @@
-fun f1() {
+fun main() {
     val n: Int = readLine()?.toInt() ?: 0
     var f0 = 0
     var f1 = 1
@@ -6,6 +6,9 @@ fun f1() {
         val t = f0 + f1
         f0 = f1
         f1 = t
+        i / 2
+        println(i)
+
         print("$f0, ")
     }
 }
