@@ -1,4 +1,4 @@
-fun main() {
+fun f1() {
     val n: Int = readLine()?.toInt() ?: 0
     var f0 = 0
     var f1 = 1
@@ -6,9 +6,6 @@ fun main() {
         val t = f0 + f1
         f0 = f1
         f1 = t
-        i / 2
-        println(i)
-
         print("$f0, ")
     }
 }
@@ -17,10 +14,11 @@ fun f2() {
     val fMax: Int = readLine()?.toInt() ?: 0
     var f0 = 0
     var f1 = 1
-    while (fMax > f1) {
+    while (f1 < fMax) {
         val t = f0 + f1
         f0 = f1
         f1 = t
+
         print("$f0, ")
     }
 }
